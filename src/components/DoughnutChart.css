@@ -1,0 +1,48 @@
+.doughnut-chart-container {
+    width: 500px;
+    height: 600px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#chartjs-tooltip {
+    text-align: center;
+    border-radius: 50%;
+    /*width: 210px;*/
+    /*height: 210px;*/
+    /*margin: 15px;*/
+    border: solid 2px black;
+    display: flex;
+    flex-flow: column;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+#chartjs-tooltip * {
+    padding: 0;
+    margin: 0;
+
+}
+
+#chartjs-tooltip h3 {
+    font: 25px "SF Pro Display";
+    margin: 25px;
+    /*margin-bottom: 25px;*/
+    /*margin-top: 30px;*/
+}
+
+#chartjs-tooltip p {
+    margin-bottom: 15px;
+}
+
+.tooltip-percent {
+    font: 20px "SF Pro Text";
+
+}
+
+.tooltip-amount {
+    font: 15px "SF Pro Text"
+}
