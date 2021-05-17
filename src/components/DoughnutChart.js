@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import "./DoughnutChart.css";
 import {Chart, registerables} from 'chart.js';
 import axios from 'axios';
-import {getHoverColor} from "chart.js/helpers";
 
 
 export default class DoughnutChart extends Component {
@@ -115,8 +114,7 @@ export default class DoughnutChart extends Component {
                                             let sum = 0;
                                             tooltipModel.tooltip.dataPoints[0].dataset.data.forEach(item => sum += item);
                                             const percent = Math.floor(amount / sum * 100);
-                                            let innerHtml = `<h3>${lang}</h3>\n` + `<p class="tooltip-percent">${percent} %</p>\n` + `<p class="tooltip-amount">${amount} Bytes</p>\n`;
-                                            tooltipEl.innerHTML = innerHtml;
+                                            tooltipEl.innerHTML = `<h3>${lang}</h3>\n<p class="tooltip-percent">${percent} %</p>\n<p class="tooltip-amount">${amount} Bytes</p>\n`;
                                         }
 
                                         // console.log(tooltipModel.tooltip);
