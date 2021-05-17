@@ -60,7 +60,8 @@ export default class DoughnutChart extends Component {
         const myChartRef = this.chartRef.current.getContext("2d");
         const options = {
             method: "GET",
-            url: "http://localhost:1337/cv/git-stats-ready"
+            // url: "http://localhost:1337/cv/git-stats-ready"
+            url: "https://cv-sails.herokuapp.com/cv/git-stats-ready"
         }
         axios.request(options)
             .then(res => res.data)
@@ -113,13 +114,12 @@ export default class DoughnutChart extends Component {
                                             const amount = tooltipModel.tooltip.dataPoints[0].parsed;
                                             let sum = 0;
                                             tooltipModel.tooltip.dataPoints[0].dataset.data.forEach(item => sum += item);
-                                            console.log(amount / sum);
                                             const percent = Math.floor(amount / sum * 100);
                                             let innerHtml = `<h3>${lang}</h3>\n` + `<p class="tooltip-percent">${percent} %</p>\n` + `<p class="tooltip-amount">${amount} Bytes</p>\n`;
                                             tooltipEl.innerHTML = innerHtml;
                                         }
 
-                                        console.log(tooltipModel.tooltip);
+                                        // console.log(tooltipModel.tooltip);
                                         // console.log(tooltipModel.tooltip.labelColors[0].hoverB);
                                         const color = tooltipModel.tooltip.dataPoints[0].dataset.hoverBackgroundColor[tooltipModel.tooltip.dataPoints[0].dataIndex];
                                         tooltipEl.style.backgroundColor = color + '';
