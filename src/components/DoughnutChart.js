@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import "./DoughnutChart.css";
 import {Chart, registerables} from 'chart.js';
 import axios from 'axios';
+import { CircularProgress } from '@material-ui/core';
 
 
 export default class DoughnutChart extends Component {
@@ -59,8 +60,8 @@ export default class DoughnutChart extends Component {
         const myChartRef = this.chartRef.current.getContext("2d");
         const options = {
             method: "GET",
-            // url: "http://localhost:1337/cv/git-stats-ready"
-            url: "https://cv-sails.herokuapp.com/cv/git-stats-ready"
+            url: "http://46.173.214.190/cv/git-stats-ready",
+            // url: "https://cv-sails.herokuapp.com/cv/git-stats-ready",
         }
         axios.request(options)
             .then(res => res.data)
@@ -157,10 +158,11 @@ export default class DoughnutChart extends Component {
     render() {
 
         const message = this.state.error ? <h3>Error: {this.state.error.message}</h3> : (
-            !this.state.isLoaded ? <h3>Загрузка...</h3> : <h3>Git stats</h3>);
+            !this.state.isLoaded ? <h3>Загрузка...<CircularProgress/></h3> : <h3>Git stats</h3>);
         return (
             <div>
                 {message}
+                <CircularProgress/>
                 <div className="doughnut-chart-container">
                     <canvas
                         id="myChart"
