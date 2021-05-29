@@ -31,7 +31,7 @@ export default class Slide extends Component {
                 <div className={"slider-image-container"}>
                     <img
                         className={"slider-image" + (this.props.hideImage ? " slider-image-hidden" : "")}
-                        src={this.props.image} alt={"Slider image"}/>
+                        src={this.props.image} alt={"Slider"}/>
                 </div>
                 <h3>{this.props.header}</h3>
                 <p className={"slider-rating"}>{this.props.rating}</p>

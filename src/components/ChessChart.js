@@ -53,10 +53,6 @@ export default class ChessChart extends Component {
             method: "GET",
             url: "https://codeforces.com/api/user.info?handles=dmd161100",
         }
-        const optionsDota = {
-            method: "GET",
-            url: "http://api.steampowered.com/IPlayerService/GetOwnedGames/v1?key=60415F4B4DC7A17102AF1DE7ECD6FB3A&steamid=76561198142273481&format=json&include_appinfo=true&include_played_free_games=true",
-        }
         axios.request(optionsChess)
             .then(res => res.data)
             .then(
