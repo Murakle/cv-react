@@ -1,0 +1,21 @@
+.slider-menu {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.slider-menu-item {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.25);
+    margin: 0 4px;
+}
+
+.slider-menu-item-active {
+    width: 8px;
+    height: 8px;
+    background: white;
+}

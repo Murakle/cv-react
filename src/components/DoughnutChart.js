@@ -60,9 +60,10 @@ export default class DoughnutChart extends Component {
         const myChartRef = this.chartRef.current.getContext("2d");
         const options = {
             method: "GET",
-            url: "http://46.173.214.190/cv/git-stats-ready",
+            url: "https://46.173.214.190/cv/git-stats-ready",
             // url: "https://cv-sails.herokuapp.com/cv/git-stats-ready",
         }
+
         axios.request(options)
             .then(res => res.data)
             .then(
@@ -162,7 +163,6 @@ export default class DoughnutChart extends Component {
         return (
             <div>
                 {message}
-                <CircularProgress/>
                 <div className="doughnut-chart-container">
                     <canvas
                         id="myChart"
